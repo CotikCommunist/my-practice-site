@@ -1,37 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="ru">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Практика</title>
-    
-    <link rel="stylesheet" href="https://cdn/jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
-    <script scr="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
-    <script scr="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <section class="contact-form container my-5">
-      <h2 class="text-center mb-4">Свяжитесь с нами</h2>
-      <from id="from1" class="p-4 shadow rounded bg-white">
+</head>
+<body>
+
+<section class="contact-form container my-5">
+    <h2 class="text-center mb-4">Свяжитесь с нами</h2>
+
+    <form id="form1" class="p-4 shadow rounded bg-white">
+
         <div class="mb-3">
-          <label class="from-label">Имя *</label>
-          <input type="text" id="name1" class="from-control" required minlength="3" placeholder="Введите имя">
+            <label class="form-label">Имя *</label>
+            <input type="text" id="name1" class="form-control" required minlength="3" placeholder="Введите имя">
         </div>
+
         <div class="mb-3">
-          <label class="from-label">Почта *</label>
-          <input type="email" id="email1" class="from-control" placeholder="Введите почту">
+            <label class="form-label">Почта *</label>
+            <input type="email" id="email1" class="form-control" required placeholder="Введите почту">
         </div>
+
         <div class="mb-3">
-          <label class="from-label">Сообщение *</label>
-          <textarea id="message1" class="from-control" required placeholder="Введите сообщение">
+            <label class="form-label">Сообщение *</label>
+            <textarea id="message1" class="form-control" required placeholder="Введите сообщение"></textarea>
         </div>
-            <button type="submit" class="btn btn-primary w-100">Отправить</button>
-      </from>
-    </section>
-    <script src="script.js"></script>
-  </body>
+
+        <button type="submit" class="btn btn-primary w-100">Отправить</button>
+
+    </form>
+</section>
+
+<script src="script.js"></script>
+</body>
 </html>
