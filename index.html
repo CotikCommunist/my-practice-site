@@ -39,5 +39,34 @@
 </section>
 
 <script src="script.js"></script>
+    <section class="order-from container my-5">
+        <h3 class="mb-1">Информация о заказе</h3>
+        <p class="text-muted mb-4" style="margin-top: -5px">Мы доставляем за 2 дня</p>
+        <from id="from2" class="p-4 shadow rounded bg-white">
+            <div class="mb-3">
+                <label class="from-label">Полное имя *</label>
+                <input type="text" id="fullname" class="from-control" required placeholder="Введите имя">
+            </div>
+            <div class="mb-3">
+                <label class="from-label">Адрес доставки *</label>
+                <select>
+                    <option value="">Выберите адрес</option>
+                    <option>Москва</option>
+                    <option>Санкт-Петербург</option>
+                    <option>Казань</option>
+                </select>
+                
+            </div>
+            <div class="mb-3">
+                <label class="from-label">Комментарий к заказу</label>
+                <textarea id="comment" class="from-control" placeholder="Введите комментарий"></textarea>
+            </div>
+            <div class="mb-3 from-check">
+                <input type="checkbox" class="from-check-input" id="policy">
+                <label class="from-check-label" for="policy">Принять условия договора-оферты *</label>
+            </div>
+            <button type="submit" class="btn btn-dark w-100">Создать заказ</button>
+        </from>
+    </section>
 </body>
 </html>
