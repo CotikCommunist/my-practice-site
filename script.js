@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    // ===== ОТПРАВКА ФОРМЫ =====
+    // Форма
     $("#form1").on("submit", function (event) {
         event.preventDefault();
 
@@ -21,7 +21,6 @@ $(document).ready(function () {
             return;
         }
 
-        // Простая отправка
         $.ajax({
             url: "http://127.0.0.1",
             method: "POST",
@@ -39,12 +38,12 @@ $(document).ready(function () {
         });
     });
 
-    // ===== ЗАГРУЗКА ОТЗЫВОВ ИЗ reviews.json =====
+    // Загрузка отзывов
     function loadReviews() {
         $.getJSON("reviews.json", function (data) {
 
             let block = $("#reviewsList");
-            block.empty(); // очищаем старые отзывы
+            block.empty();
 
             data.forEach(function (rev) {
                 let html = 
@@ -61,6 +60,6 @@ $(document).ready(function () {
         });
     }
 
-    // Загружаем отзывы при старте страницы
+    // Загружаю отзывы
     loadReviews();
 });
