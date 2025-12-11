@@ -4,13 +4,14 @@ body {
     font-family: "Segoe UI", sans-serif;
 }
 
-/* .contact-form {
+.container, #form1 {
     max-width: 600px;
-} */
-
-#form1 {
+    margin: 40px auto;
+    background: #fff;
+    padding: 25px;
     border-radius: 12px;
     border: 1px solid #e2e2e2;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
     transition: 0.3s;
 }
 
@@ -19,70 +20,61 @@ body {
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
-input, textarea {
-    border-radius: 8px !important;
-    border: 1px solid #cfcfcf !important;
-}
-
-input:focus, textarea:focus {
-    border-color: #0d6efd !important;
-    box-shadow: 0 0 8px rgba(13, 110, 253, 0.3) !important;
-}
-
-button {
-    transition: 0.25s;
-}
-
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-
-/* body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-} */
-
-.container {
-    max-width: 600px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
 h1 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-input, textarea {
+/* Поля */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+textarea {
     width: 100%;
     padding: 10px;
     margin: 8px 0 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    border-radius: 8px;
+    border: 1px solid #cfcfcf;
     font-size: 16px;
+    transition: 0.2s;
 }
 
+input:focus,
+textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+    outline: none;
+}
+
+/* Чекбокс */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    transform: scale(1); /* фикс от гигантских чекбоксов */
+}
+
+/* Кнопка */
 button {
     width: 100%;
     padding: 12px;
     background: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 18px;
+    transition: 0.25s;
 }
 
 button:hover {
     background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+/* Сообщение */
 .message {
     padding: 10px;
     border-radius: 5px;
@@ -99,13 +91,10 @@ button:hover {
     color: #721c24;
 }
 
-// для мобилок
+/* Для мобилки */
 @media (max-width: 480px) {
-    .container {
+    .container, #form1 {
         margin: 20px;
-        padding: 20px;
-    }
-     #form1 {
         padding: 20px;
     }
 
@@ -119,4 +108,3 @@ button:hover {
         font-size: 17px;
     }
 }
-
