@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    // ------------ ЗАГРУЗКА ОТЗЫВОВ -----------------
+    // Отзывы
     function loadReviews() {
         $.getJSON("reviews.json", function (data) {
 
@@ -26,12 +26,12 @@ $(document).ready(function () {
         });
     }
 
-    // вызываем загрузку отзывов при старте страницы
+    // Загрузка отзывов
     loadReviews();
 
 
 
-    // ------------ ОБРАБОТКА ПЕРВОЙ ФОРМЫ -----------------
+    // Условия первой и второй формы
     $("#form1").on("submit", function (e) {
         e.preventDefault();
         
