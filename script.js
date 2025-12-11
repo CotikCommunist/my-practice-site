@@ -1,5 +1,37 @@
 $(document).ready(function () {
 
+    // ------------ ЗАГРУЗКА ОТЗЫВОВ -----------------
+    function loadReviews() {
+        $.getJSON("reviews.json", function (data) {
+
+            let container = $("#reviewsList");
+            container.empty();
+
+            data.forEach(r => {
+                container.append(
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="p-3 border rounded h-100">
+                            <div class="d-flex align-items-center mb-2">
+                                <span style="font-size:22px; margin-right:10px;">ℹ️</span>
+                                <h5 class="mb-0">${r.name}</h5>
+                            </div>
+                            <p class="text-muted">${r.text}</p>
+                        </div>
+                    </div>
+                );
+            });
+
+        }).fail(function () {
+            console.error("Ошибка: не удалось загрузить reviews.json");
+        });
+    }
+
+    // вызываем загрузку отзывов при старте страницы
+    loadReviews();
+
+
+
+    // ------------ ОБРАБОТКА ПЕРВОЙ ФОРМЫ -----------------
     $("#form1").on("submit", function (e) {
         e.preventDefault();
         
@@ -11,11 +43,13 @@ $(document).ready(function () {
             alert("Имя должно содержать минимум 3 символа");
             return;
         }
+
         const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailReg.test(email)) {
             alert("Введите корректную почту");
             return;
         }
+
         $.ajax({
             url: "http://127.0.0.1",
             method: "POST",
