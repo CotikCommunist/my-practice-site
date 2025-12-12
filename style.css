@@ -52,7 +52,7 @@ input[type="checkbox"] {
     width: 18px;
     height: 18px;
     margin-right: 8px;
-    transform: scale(1); /* фикс от гигантских чекбоксов */
+    transform: scale(1);
 }
 
 /* Кнопка */
@@ -92,7 +92,6 @@ button:hover {
 }
 
 /* темная тема */
-
 body.dark {
     background: #1a1a1a;
     color: white;
@@ -104,38 +103,37 @@ body.dark .bg-white {
     color: #fff !important;
 }
 
-/* поля */
-body.dark input,
-body.dark textarea,
-body.dark select {
+/* Поля в тёмной теме */
+body.dark input.form-control,
+body.dark textarea.form-control,
+body.dark select.form-control {
     background: #333 !important;
     border-color: #555 !important;
     color: #fff !important;
 }
 
-/* отзывы */
+body.dark input.form-control::placeholder,
+body.dark textarea.form-control::placeholder,
+body.dark select.form-control::placeholder {
+    color: #bbb !important;
+}
+
+/* Отзывы */
 body.dark .shadow-sm {
     background: #2e2e2e !important;
     color: #fff !important;
 }
 
-/* тёмная тема для полей */
-body.dark input.form-control,
-body.dark textarea.form-control,
-body.dark select.form-control {
-    background: #333 !important;  
-    border-color: #555 !important; 
-    color: #fff !important;        
+/* Коррекция текста Bootstrap text-muted */
+body.dark .text-muted {
+    color: #ccc !important;
 }
 
-/* placeholder в полях ввода */
-body.dark input.form-control::placeholder,
-body.dark textarea.form-control::placeholder,
-body.dark select.form-control::placeholder {
-    color: #bbb !important; 
+/* Кнопки в тёмной теме */
+body.dark button {
+    background: #555 !important;
+    color: #fff !important;
 }
-
-
 
 /* Для мобилки */
 @media (max-width: 480px) {
