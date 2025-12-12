@@ -47,7 +47,7 @@ textarea:focus {
     outline: none;
 }
 
-/* Чекбокс */
+/* чекбокс */
 input[type="checkbox"] {
     width: 18px;
     height: 18px;
@@ -55,7 +55,7 @@ input[type="checkbox"] {
     transform: scale(1);
 }
 
-/* Кнопка */
+/* кнопка */
 button {
     width: 100%;
     padding: 12px;
@@ -74,7 +74,7 @@ button:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Сообщения */
+/* сообщения */
 .message {
     padding: 10px;
     border-radius: 5px;
@@ -91,23 +91,23 @@ button:hover {
     color: #721c24;
 }
 
-/* --- ТЁМНАЯ ТЕМА --- */
+/* темная тема */
 body.dark {
     background: #1a1a1a;
     color: white;
 }
 
-/* Фон всех блоков и форм */
+/* фон всех блоков и форм */
 body.dark .container,
 body.dark #form1,
 body.dark #form2,
 body.dark .bg-white,
 body.dark .shadow-sm {
-    background: #2f2f2f !important; /* светло-тёмный фон */
+    background: #2f2f2f !important;
     color: #fff !important;
 }
 
-/* Поля ввода */
+/* поля ввода */
 body.dark input.form-control,
 body.dark textarea.form-control,
 body.dark select.form-control {
@@ -122,23 +122,22 @@ body.dark select.form-control::placeholder {
     color: #bbb !important;
 }
 
-/* Отзывы */
+/* отзывы */
 body.dark .shadow-sm {
     background: #2f2f2f !important;
     color: #fff !important;
 }
 
-/* Комментарии внутри отзывов */
+/* комментарии внутри отзывов */
 body.dark #reviewsList .shadow-sm p.text-muted {
     color: #ddd !important;
 }
 
-/* Коррекция текста Bootstrap text-muted */
 body.dark .text-muted {
     color: #ccc !important;
 }
 
-/* Кнопки */
+/* кнопки в черное */
 body.dark #form1 button {
     background: #0d6efd !important; 
     color: #fff !important;
@@ -157,7 +156,7 @@ body.dark #form2 button:hover {
     background: #555 !important;
 }
 
-/* Кнопка переключения темы */
+/* кнопка переключения темы */
 #themeToggle {
     width: auto !important;
     padding: 8px 12px !important;
@@ -178,7 +177,7 @@ body.dark #themeToggle {
     border: 1px solid #555 !important;
 }
 
-/* --- Мобильная версия --- */
+/* код для адаптации для мобилок */
 @media (max-width: 480px) {
     .container, #form1 {
         margin: 20px;
