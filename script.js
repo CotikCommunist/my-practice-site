@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    // Формы
+    // формы
     $("#form1").on("submit", function (e) {
         e.preventDefault();
 
@@ -22,20 +22,18 @@ $(document).ready(function () {
         alert("Запрос отправлен!");
     });
 
-
-    // Отзывы, загрузка
+    // блок с отзывами
     function loadReviews() {
         $.ajax({
             url: "reviews.json",
             dataType: "json",
-            cache: false,        // ВАЖНО! GitHub Pages иначе кеширует
-            success: function (data) {
+            cache: false,
 
+            success: function (data) {
                 let container = $("#reviewsList");
                 container.empty();
 
                 data.forEach(r => {
-
                     let item = `
                     <div class="col-md-4">
                         <div class="p-3 shadow-sm rounded bg-white">
@@ -43,7 +41,6 @@ $(document).ready(function () {
                             <p class="text-muted">${r.text}</p>
                         </div>
                     </div>`;
-                        
                     container.append(item);
                 });
             },
@@ -54,26 +51,27 @@ $(document).ready(function () {
         });
     }
 
-    loadReviews(); // Запуск
-    
-    // Темная тема
-// Загружаем тему при старте
-if (localStorage.getItem("theme") === "dark") {
-    $("body").addClass("dark");
-    $("#themeToggle").text("☀️ Светлая тема");
-}
+    loadReviews();
 
-// Переключатель
-$("#themeToggle").on("click", function () {
-    $("body").toggleClass("dark");
-
-    if ($("body").hasClass("dark")) {
-        $(this).text("☀️ Светлая тема");
-        localStorage.setItem("theme", "dark");
-    } else {
-        $(this).text("🌙 Тёмная тема");
-        localStorage.setItem("theme", "light");
+    // переключатель темы
+    // проверка сохраненой темы
+    if (localStorage.getItem("theme") === "dark") {
+        $("body").addClass("dark");
+        $("#themeToggle").text("☀️ Светлая тема");
     }
-});
+
+    // Переключатель темы
+    $("#themeToggle").on("click", function () {
+
+        $("body").toggleClass("dark");
+
+        if ($("body").hasClass("dark")) {
+            $(this).text("☀️ Светлая тема");
+            localStorage.setItem("theme", "dark");
+        } else {
+            $(this).text("🌙 Тёмная тема");
+            localStorage.setItem("theme", "light");
+        }
+    });
 
 });
