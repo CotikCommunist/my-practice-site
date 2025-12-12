@@ -55,5 +55,25 @@ $(document).ready(function () {
     }
 
     loadReviews(); // Запуск
+    
+    // Темная тема
+// Загружаем тему при старте
+if (localStorage.getItem("theme") === "dark") {
+    $("body").addClass("dark");
+    $("#themeToggle").text("☀️ Светлая тема");
+}
+
+// Переключатель
+$("#themeToggle").on("click", function () {
+    $("body").toggleClass("dark");
+
+    if ($("body").hasClass("dark")) {
+        $(this).text("☀️ Светлая тема");
+        localStorage.setItem("theme", "dark");
+    } else {
+        $(this).text("🌙 Тёмная тема");
+        localStorage.setItem("theme", "light");
+    }
+});
 
 });
