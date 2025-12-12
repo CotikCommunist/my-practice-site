@@ -119,6 +119,23 @@ body.dark .shadow-sm {
     color: #fff !important;
 }
 
+/* тёмная тема для полей */
+body.dark input.form-control,
+body.dark textarea.form-control,
+body.dark select.form-control {
+    background: #333 !important;  
+    border-color: #555 !important; 
+    color: #fff !important;        
+}
+
+/* placeholder в полях ввода */
+body.dark input.form-control::placeholder,
+body.dark textarea.form-control::placeholder,
+body.dark select.form-control::placeholder {
+    color: #bbb !important; 
+}
+
+
 
 /* Для мобилки */
 @media (max-width: 480px) {
