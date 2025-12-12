@@ -113,30 +113,12 @@ body.dark select {
     color: #fff !important;
 }
 
-body.dark input::placeholder,
-body.dark textarea::placeholder,
-body.dark select::placeholder {
-    color: #bbb !important; /* светлый серый, чтобы был виден */
-}
-
 /* отзывы */
 body.dark .shadow-sm {
     background: #2e2e2e !important;
     color: #fff !important;
 }
 
-#themeToggle {
-    color: black;       /* текст тёмный на светлом фоне */
-    background: #fff;   /* фон кнопки */
-    border: 1px solid #ccc;
-}
-
-/* цвет текста кнопки в тёмной теме */
-body.dark #themeToggle {
-    color: white;       /* текст белый на тёмном фоне */
-    background: #333;   /* фон кнопки */
-    border: 1px solid #555;
-}
 
 /* Для мобилки */
 @media (max-width: 480px) {
