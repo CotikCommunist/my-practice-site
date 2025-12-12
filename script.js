@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    // Форма 
+    // Формы
     $("#form1").on("submit", function (e) {
         e.preventDefault();
 
@@ -22,33 +22,38 @@ $(document).ready(function () {
         alert("Запрос отправлен!");
     });
 
-    // Загрузка отзывов
+
+    // Отзывы, загрузка
     function loadReviews() {
-        $.getJSON("reviews.json", function (data) {
+        $.ajax({
+            url: "reviews.json",
+            dataType: "json",
+            cache: false,        // ВАЖНО! GitHub Pages иначе кеширует
+            success: function (data) {
 
-            let container = $("#reviewsList");
-            container.empty();
+                let container = $("#reviewsList");
+                container.empty();
 
-            data.forEach(r => {
+                data.forEach(r => {
 
-                let item = 
-                <div class="col-md-4">
-                    <div class="p-3 shadow-sm rounded bg-white">
-                        <h5>${r.name}</h5>
-                        <p class="text-muted">${r.text}</p>
-                    </div>
-                </div>
-                ;
+                    let item = `
+                    <div class="col-md-4">
+                        <div class="p-3 shadow-sm rounded bg-white">
+                            <h5>${r.name}</h5>
+                            <p class="text-muted">${r.text}</p>
+                        </div>
+                    </div>`;
+                        
+                    container.append(item);
+                });
+            },
 
-                container.append(item);
-            });
-
-        }).fail(function () {
-            console.log("Ошибка загрузки reviews.json");
+            error: function (err) {
+                console.log("Ошибка загрузки reviews.json", err);
+            }
         });
     }
 
-    loadReviews();
-
+    loadReviews(); // Запуск
 
 });
