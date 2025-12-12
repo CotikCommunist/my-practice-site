@@ -113,6 +113,12 @@ body.dark select {
     color: #fff !important;
 }
 
+body.dark input::placeholder,
+body.dark textarea::placeholder,
+body.dark select::placeholder {
+    color: #bbb !important; /* светлый серый, чтобы был виден */
+}
+
 /* отзывы */
 body.dark .shadow-sm {
     background: #2e2e2e !important;
