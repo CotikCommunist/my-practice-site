@@ -15,7 +15,7 @@ body {
     transition: 0.3s;
 }
 
-/* Контейнер в полях (подсветка) */
+/* контейнер в полях (подсветка) */
 #form1 .mb-3, #form2 .mb-3 {
     border: 1px solid #e2e2e2;
     border-radius: 8px;
@@ -29,7 +29,7 @@ body {
     box-shadow: 0 0 8px rgba(13,110,253,0.3);
 }
 
-/* Поля */
+/* поля */
 input[type="text"],
 input[type="email"],
 input[type="number"],
@@ -52,7 +52,7 @@ select:focus {
     outline: none;
 }
 
-/* Чекбокс */
+/* чекбокс */
 input[type="checkbox"] {
     width: 18px;
     height: 18px;
@@ -60,7 +60,7 @@ input[type="checkbox"] {
     transform: scale(1);
 }
 
-/* Кнопки */
+/* кнопки */
 button {
     width: 100%;
     padding: 12px;
@@ -72,7 +72,7 @@ button {
     transition: 0.25s;
 }
 
-/* Сообщения */
+/* сообщения */
 .message {
     padding: 10px;
     border-radius: 5px;
@@ -88,9 +88,8 @@ button {
     background: #f8d7da;
     color: #721c24;
 }
-
 /* темная тема */
-body.dark {
+body.dark, html.dark {
     background: #1a1a1a;
     color: white;
 }
@@ -119,6 +118,7 @@ body.dark select.form-control::placeholder {
     color: #bbb !important;
 }
 
+/* контейнеры полей (подсветка) */
 body.dark #form1 .mb-3,
 body.dark #form2 .mb-3 {
     border: 1px solid #555 !important;
@@ -132,13 +132,12 @@ body.dark #form2 .mb-3 {
 }
 
 #reviewsList .shadow-sm {
-    background: #383838 !important;
-    color: #fff !important;
+    background: #fff;
+    color: #000;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     flex: 1 1 calc(33% - 20px);
-    min-height: 180px;
     display: flex;
     flex-direction: column;
 }
@@ -150,22 +149,36 @@ body.dark #form2 .mb-3 {
 }
 
 #reviewsList .shadow-sm p {
-    color: #ddd !important;
+    color: #555;
     flex-grow: 1;
+}
+
+@media (max-width: 1024px) {
+    #reviewsList .shadow-sm {
+        flex: 1 1 calc(50% - 20px); 
+    }
 }
 
 @media (max-width: 768px) {
     #reviewsList .shadow-sm {
-        flex: 1 1 100%;
-        min-height: auto;
+        flex: 1 1 100%; 
     }
 }
 
+/* тёмная тема для отзывов */
+body.dark #reviewsList .shadow-sm {
+    background: #383838 !important;
+    color: #fff !important;
+}
+
+body.dark #reviewsList .shadow-sm p {
+    color: #ddd !important;
+}
 body.dark .text-muted {
     color: #ccc !important;
 }
 
-/* Кнопки форм */
+/* кнопки форм */
 body.dark #form1 button,
 body.dark #form2 button {
     background: #0d6efd !important; 
@@ -178,6 +191,7 @@ body.dark #form2 button:hover {
     background: #0b5ed7 !important;
 }
 
+/* кнопка переключения темы */
 #themeToggle {
     width: auto !important;
     padding: 8px 12px !important;
@@ -197,8 +211,7 @@ body.dark #themeToggle {
     color: #fff !important;
     border: 1px solid #555 !important;
 }
-
-/* для мобило */
+/* для мобилок */
 @media (max-width: 480px) {
     .container, #form1, #form2 {
         margin: 20px;
