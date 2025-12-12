@@ -133,6 +133,10 @@ body.dark .text-muted {
     color: #ccc !important;
 }
 
+body.dark #reviewsList .shadow-sm p.text-muted {
+    color: #ddd !important; /* светлый текст для комментариев */
+}
+
 /* кнопка переключения темы */
 #themeToggle {
     width: auto !important;
