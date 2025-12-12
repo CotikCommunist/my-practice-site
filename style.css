@@ -52,7 +52,7 @@ input[type="checkbox"] {
     width: 18px;
     height: 18px;
     margin-right: 8px;
-    transform: scale(1);
+    transform: scale(1); /* фикс от гигантских чекбоксов */
 }
 
 /* Кнопка */
@@ -103,7 +103,7 @@ body.dark .bg-white {
     color: #fff !important;
 }
 
-/* Поля в тёмной теме */
+/* поля в тёмной теме */
 body.dark input.form-control,
 body.dark textarea.form-control,
 body.dark select.form-control {
@@ -118,21 +118,41 @@ body.dark select.form-control::placeholder {
     color: #bbb !important;
 }
 
-/* Отзывы */
+/* отзывы */
 body.dark .shadow-sm {
     background: #2e2e2e !important;
     color: #fff !important;
 }
 
-/* Коррекция текста Bootstrap text-muted */
+/* комментарии внутри отзывов */
+body.dark .shadow-sm p {
+    color: #ddd !important; /* текст комментариев светло-серый */
+}
+
 body.dark .text-muted {
     color: #ccc !important;
 }
 
-/* Кнопки в тёмной теме */
-body.dark button {
-    background: #555 !important;
+/* кнопка переключения темы */
+#themeToggle {
+    width: auto !important;
+    padding: 8px 12px !important;
+    background: #fff !important;
+    color: #000 !important;   
+    border: 1px solid #ccc !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    position: fixed !important;
+    right: 15px !important;
+    bottom: 15px !important;
+    z-index: 1000; 
+}
+
+/* тёмная тема для кнопки */
+body.dark #themeToggle {
+    background: #333 !important;
     color: #fff !important;
+    border: 1px solid #555 !important;
 }
 
 /* Для мобилки */
